@@ -1,0 +1,46 @@
+# Iteration History
+
+> **Gap notice:** the detailed iteration-by-iteration history (model
+> v1-v4, the data leakage incident, class imbalance handling, and their
+> before/after metrics) lives in the *original* project handoff document
+> and the `BluArmor_AOI_Story.pptx` deck, neither of which were provided
+> when this repo was assembled. Paste that content in here — this file
+> is a skeleton reflecting only what's confirmed in later handoffs.
+
+## Confirmed model versions
+
+- **Connector Alignment — v6**: generalized to both black and white
+  connector colors. This is the "LATEST version" referenced throughout
+  the deployment code; multicolor fine-tune pipeline lives in
+  `training/` (not yet populated in this repo — see
+  `docs/MISSING_FILES.md`).
+- **Mic Wire Polarity — v1**: first-pass model, trained from
+  `yolo11n.pt` (COCO-pretrained) rather than fine-tuned from the
+  connector checkpoint, since the wire/terminal object has no shared
+  visual foundation with the connector task. ~100 images per class
+  (`defective`/`passing`) — lean for training from scratch, flagged as
+  first-pass, not final. Training run name: `aoi_mic_wiring_v1`.
+
+## Known issues faced (per project owner, details not further specified here)
+
+- Data leakage — incident occurred at some point in the connector
+  model's iteration history; resolution and before/after metrics are in
+  the original handoff/deck, not reproduced here.
+- Class imbalance — same note; see original materials.
+
+## Dataset quirk — mic wiring
+
+The Roboflow export for `aoi_mic_wiring_v1` (version 3) had no
+`valid`/`test` folders at all (100% train, 0% held out) — a dataset
+generation config issue, not a pipeline bug. Fixed by having the split
+cell skip any split it can't find on disk, since later cells rebuild the
+split from scratch anyway.
+
+## Presentation deck
+
+`BluArmor_AOI_Story.pptx` (not included in this repo) — a 15-slide deck
+for a non-technical audience covering the manual-inspection problem, the
+reusable 6-step pipeline, all model iterations including an honest
+data-leakage slide, the live false-negative finding, and scaling to a
+fleet. **Predates the mic-wiring project and auto-detect** — only tells
+the connector story as of its creation.
