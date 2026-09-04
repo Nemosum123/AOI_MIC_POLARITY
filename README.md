@@ -37,7 +37,6 @@ position, log paths).
 bluarmor-aoi/
 ├── README.md
 ├── .gitignore
-├── LICENSE
 ├── requirements.txt
 ├── deployment/
 │   ├── inspection_core.py     # multi-task inference, auto-detect, QR-aware logging
