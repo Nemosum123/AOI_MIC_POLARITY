@@ -43,8 +43,6 @@ bluarmor-aoi/
 │   ├── inspection_core.py     # multi-task inference, auto-detect, QR-aware logging
 │   ├── touchscreen_app.py     # Tkinter kiosk UI — deployed on the Pi as touchscreen.py
 │   ├── preprocess.py          # preprocessing file
-│   ├── pi_stream_server.py    # MJPEG live view for focus tuning
-│   └── pc_stream_viewer.py    # PC-side viewer for the above
 ├── training/
 │   └── pipeline.ipynb         # kaggle notebook 
 └── docs/
