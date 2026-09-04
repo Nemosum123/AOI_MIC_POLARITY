@@ -1,0 +1,10 @@
+# Install with: pip install -r requirements.txt
+# Must be run inside a venv created with --system-site-packages
+# (see README.md) — picamera2, libcamera, and tkinter are NOT pip
+# packages here, they come from Raspberry Pi OS's apt packages:
+#   sudo apt install python3-picamera2 python3-libcamera python3-tk
+
+ultralytics
+opencv-python-headless
+Pillow
+numpy
