@@ -7,11 +7,6 @@ switchable between two inspection tasks on the same hardware, with an
 automatic (no button press) capture mode and USB scan-gun serial/QR
 tracking.
 
-> **Repo status:** this reflects the multi-task + auto-detect + QR-scan
-> state of the project. See `docs/MISSING_FILES.md` — a few
-> Pi-side scripts referenced below still need to be copied in manually
-> before this repo is fully self-contained.
-
 ---
 
 ## 1. What it does
@@ -47,13 +42,11 @@ bluarmor-aoi/
 ├── deployment/
 │   ├── inspection_core.py     # multi-task inference, auto-detect, QR-aware logging
 │   ├── touchscreen_app.py     # Tkinter kiosk UI — deployed on the Pi as touchscreen.py
-│   ├── preprocess.py          # ⚠️ NOT INCLUDED — see docs/MISSING_FILES.md
-│   ├── crop_boundary_check.py # ⚠️ NOT INCLUDED — diagnostic, left-side-miss investigation
-│   ├── macro_capture_test.py  # ⚠️ NOT INCLUDED — focus-bracketing tool
-│   ├── pi_stream_server.py    # ⚠️ NOT INCLUDED — MJPEG live view for focus tuning
-│   └── pc_stream_viewer.py    # ⚠️ NOT INCLUDED — PC-side viewer for the above
+│   ├── preprocess.py          # preprocessing file
+│   ├── pi_stream_server.py    # MJPEG live view for focus tuning
+│   └── pc_stream_viewer.py    # PC-side viewer for the above
 ├── training/
-│   └── README.md              # placeholder — Kaggle notebooks not included, see below
+│   └── pipeline.ipynb         # kaggle notebook 
 └── docs/
     ├── ARCHITECTURE.md
     ├── QR_SCANNER_INTEGRATION.md
@@ -61,10 +54,6 @@ bluarmor-aoi/
     ├── ITERATION_HISTORY.md
     └── MISSING_FILES.md
 ```
-
-> **Important filename note:** on the Pi, `touchscreen_app.py`'s content
-> is deployed under the filename `touchscreen.py` — this mismatch caused
-> real debugging pain early on. Keep it in mind if you rename anything.
 
 ## 4. Setup on the Pi
 
