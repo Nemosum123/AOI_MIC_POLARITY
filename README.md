@@ -50,6 +50,7 @@ bluarmor-aoi/
     ├── OUTSTANDING_ITEMS.md
     ├── ITERATION_HISTORY.md
     └── MISSING_FILES.md
+    |__PROJECT REPORT
 ```
 
 ## 4. Setup on the Pi
